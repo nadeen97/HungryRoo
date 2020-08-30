@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">42404421673-aci2m6v1o6538qe1f5njfvf1l8dic1on.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://hungryroo-b130d.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">42404421673</string>
+    <string name="google_api_key" translatable="false">AIzaSyAQB6QOFB_6zrsou9-EgPSTU_gUv2789i8</string>
+    <string name="google_app_id" translatable="false">1:42404421673:android:710740bb4382f5a35d7c38</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAQB6QOFB_6zrsou9-EgPSTU_gUv2789i8</string>
+    <string name="google_storage_bucket" translatable="false">hungryroo-b130d.appspot.com</string>
+    <string name="project_id" translatable="false">hungryroo-b130d</string>
+</resources>

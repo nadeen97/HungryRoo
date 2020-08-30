@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "42404421673",
+    "firebase_url": "https://hungryroo-b130d.firebaseio.com",
+    "project_id": "hungryroo-b130d",
+    "storage_bucket": "hungryroo-b130d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42404421673:android:710740bb4382f5a35d7c38",
+        "android_client_info": {
+          "package_name": "com.inspia.hungryroo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42404421673-kohq0v7nv5qbdudqfkumvf2ig1ig7gkt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inspia.hungryroo",
+            "certificate_hash": "973183aafe2c8a8ed1c6a89c116e1bee04191b08"
+          }
+        },
+        {
+          "client_id": "42404421673-aci2m6v1o6538qe1f5njfvf1l8dic1on.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQB6QOFB_6zrsou9-EgPSTU_gUv2789i8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42404421673-aci2m6v1o6538qe1f5njfvf1l8dic1on.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
