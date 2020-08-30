@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -11,6 +12,8 @@ import 'package:hungryroo/classes//upload_image.dart';
 import 'package:hungryroo/models/restaurant.dart';
 import 'package:hungryroo/screens/location.dart';
 import 'package:http/http.dart'as http;
+
+import 'notification.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -167,11 +170,19 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(color: Colors.white, fontSize: 30),
                   ),
                   onTap: () {
-                    print("jj");
                     setState(() {
                       containerColor = Colors.grey;
-                      Navigator.pop(context);
                     });
+                    final snackBar = SnackBar(
+                      content: Text(messegeState),
+                      action: SnackBarAction(
+                        label: 'Undo',
+                      ),
+                    );
+
+                    // Find the Scaffold in the widget tree and use
+                    // it to show a SnackBar.
+                    Scaffold.of(context).showSnackBar(snackBar);
                   },
                 ),
 
@@ -241,6 +252,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     getCurrtentUser();
     fetchData();
+    configureCallbacks();
   }
 
   fetchData()async
@@ -268,6 +280,41 @@ class _HomePageState extends State<HomePage> {
 
   }
 
+  final FirebaseMessaging _firebaseMessaging=FirebaseMessaging();
+  String messegeState="There is no notifactions yet";
+  void configureCallbacks()
+  {
+    _firebaseMessaging.configure(
+      onMessage: (message)async{
 
+        print("on messege$message");
+        setState(() {
+          messegeState="on messege$message";
+        });
+      },
+      onResume: (message)async{
+        print("on Resume$message");
 
+        setState(() {
+          messegeState="on Resume$message";
+        });
+
+      },
+      onBackgroundMessage: (message)async{
+        print("on background$message");
+        setState(() {
+          messegeState="on Background$message";
+        });
+
+      },
+      onLaunch: (message)async{
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationPage()));
+        print("on Launch$message");
+
+        setState(() {
+          messegeState="on Launch$message";
+        });
+      },
+    );
+  }
 }
